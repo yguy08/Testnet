@@ -1,5 +1,5 @@
 #Thread title i.e (ptg, /ptg/, etc..)
-$threadTitle='ptg'
+$threadTitle='PRESIDENT TRUMP GENERAL'
 
 #Search archive for ptg posts
 Write-Host 'searching archive for threads with: ' $threadTitle
@@ -9,13 +9,11 @@ Write-Host 'target URL is' $downloadURL
 $source=Invoke-WebRequest -Uri $downloadURL
 
 if($source.StatusCode -eq 200){
-    $i=10292017
     foreach($l in $source.Links){
         if($l.href.Contains('https://img.4plebs.org/boards/pol/image/')){
-            ($i++)
-            echo $i
+            $datetime=(Get-Date -F s).Replace(":","-").ToString()
             $hqThreadImg=$l.href
-            $response=Invoke-WebRequest -Uri $hqThreadImg -OutFile c:\maga\$i.png -PassThru
+            $response=Invoke-WebRequest -Uri $hqThreadImg -OutFile c:\maga\$datetime.png -PassThru
             echo $response.StatusCode 
             Start-Sleep -m 1000
         }
