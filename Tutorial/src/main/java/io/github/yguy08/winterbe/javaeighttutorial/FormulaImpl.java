@@ -1,6 +1,6 @@
 package io.github.yguy08.winterbe.javaeighttutorial;
-
-public class DefaultMethodIMain {
+//Default method impl
+public class FormulaImpl {
 	public static void main(String[] args) {
         Formula formula = new Formula(){
         	@Override
