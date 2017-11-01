@@ -19,6 +19,7 @@ public class LambaScopes {
 		int notImplFinal = 1;
 		Converter<Integer, String> notImplFinalConverter = (from) -> String.valueOf(from+notImplFinal);
 		//notImplFinal=4; won't compile
+		System.out.println(notImplFinalConverter.convert(2));
 	}
 
 }
